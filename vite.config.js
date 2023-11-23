@@ -1,6 +1,8 @@
 import {defineConfig} from 'vite'
-
-
 export default defineConfig({
-	plugins: []	
+	plugins: [],
+	server: {
+		host: true,
+		port: 8000
+	}
 })
