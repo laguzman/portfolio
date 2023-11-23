@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  frontend:
+    ports:
+      - "8000:8000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lguzman-portfolio
+    container_name: lguzman-portfolio
+    volumes:
+      - type: bind
+        source: ./
+        target: /usr/src/app
+    restart: always
+    networks:
+      - net
+
+networks:
+  net:
+    name: lguzman-net
+    driver: bridge
